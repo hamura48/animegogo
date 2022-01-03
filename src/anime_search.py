@@ -23,7 +23,7 @@ def anime_search(client, message):
 
 `/search <space> Name of the Anime you want to Search.`""", parse_mode="markdown")
     else:
-        url = f"https://gogoanime.ai//search.html?keyword={query}"
+        url = f"https://www2.gogoanime.cm//search.html?keyword={query}"
         session = HTMLSession()
         response = session.get(url)
         response_html = response.text
@@ -35,7 +35,7 @@ def anime_search(client, message):
             tit = anime.a["title"]
             urll = anime.a["href"]
             r = urll.split('/')
-            # aAnimes.append({"title" : anime.a["title"] , "link" : "https://www2.gogoanime.sh{}".format(anime.a["href"])})
+            # aAnimes.append({"title" : anime.a["title"] , "link" : "https://www2.gogoanime.cm{}".format(anime.a["href"])})
             keyb.append([InlineKeyboardButton("{}".format(tit), callback_data="dt_{}".format(r[2]))])
         if keyb == []:
             # If returned list is empty, Send the following message.
